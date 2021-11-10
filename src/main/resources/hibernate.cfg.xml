@@ -4,5 +4,21 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 
 <hibernate-configuration>
-    <session-factory></session-factory>
+    <session-factory>
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="connection.url">jdbc:postgresql://ec2-52-86-223-172.compute-1.amazonaws.com/da3t04d3o15jgg</property>
+        <property name="connection.username">ykotcjhqwlqdmc</property>
+        <property name="connection.password">0ff347855640bdb270de8c98e5c1db800e1a8c3ed3317fc9497c0419d1cc9c6b</property>
+        <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <property name="show_sql">true</property>
+        <property name="current_session_context_class">thread</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="connection.pool_size">1</property>
+        <property name="hibernate.dbcp.initialSize">5</property>
+        <property name="hibernate.dbcp.maxTotal">20</property>
+        <property name="hibernate.dbcp.maxIdle">10</property>
+        <property name="hibernate.dbcp.maxWaitMillis">-1</property>
+    </session-factory>
+
+    <!--Aqui inicia la definicion de las clases de tipo entidad-->
 </hibernate-configuration>
