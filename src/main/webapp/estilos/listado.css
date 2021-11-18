@@ -1,0 +1,92 @@
+
+.body {
+    background-color: #d9d9d92e;
+    font-family: 'Titillium Web', sans-serif;
+    height: 100vh;
+}
+
+.form-div {
+
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 25px -15px rgba(0, 0, 0, 0.3);
+    background-color: white;
+    min-width: 1400px !important;
+
+}
+
+.title {
+    color: #000;
+    font-size: 25px;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin: 0 auto 25px auto;
+}
+
+
+.title:after {
+    content: '';
+    background-color: #03a145;
+    height: 3px;
+    width: 60px;
+    margin: 10px 0 0;
+    display: block;
+    clear: both;
+}
+
+.active:after {
+    content: '';
+    background-color: #03a145;
+    height: 3px;
+    margin: 10px 0 0;
+    display: block;
+    clear: both;
+}
+
+.active:hover:after {
+    content: none;
+}
+
+.nav-link:hover:after {
+    content: '';
+    background-color: #03a145;
+    height: 3px;
+    margin: 10px 0 0;
+    display: block;
+    clear: both;
+}
+
+section {
+    height: 70vh;
+    justify-content: center;
+}
+
+section form {
+    min-width: 800px;
+}
+
+thead {
+    font-weight: bold;
+}
+
+
+.overflow-y-table {
+    overflow-y: auto;
+    max-height: 450px;
+}
+
+.overflow-y-table table {
+    position: relative;
+}
+
+
+.overflow-y-table thead td {
+    background: white;
+    position: sticky;
+    top: 0;
+}
+
+
+.log-out{
+    margin-left: auto;
+}

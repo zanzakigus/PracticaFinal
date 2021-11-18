@@ -1,0 +1,100 @@
+
+.body {
+    background-color: #d9d9d92e;
+    font-family: 'Titillium Web', sans-serif;
+    height: 100vh;
+}
+
+.form-div{
+
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 25px -15px rgba(0, 0, 0, 0.3);
+    background-color: white;
+    min-width: 800px!important;
+
+}
+
+.title{
+    color: #000;
+    font-size: 25px;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin: 0 auto 25px auto;
+}
+
+
+.title:after{
+    content: '';
+    background-color: #03a145;
+    height: 3px;
+    width: 60px;
+    margin: 10px 0 0;
+    display: block;
+    clear: both;
+}
+
+.active:after{
+    content: '';
+    background-color: #03a145;
+    height: 3px;
+    margin: 10px 0 0;
+    display: block;
+    clear: both;
+}
+
+.active:hover:after{
+    content: none;
+}
+
+.nav-link:hover:after{
+    content: '';
+    background-color: #03a145;
+    height: 3px;
+    margin: 10px 0 0;
+    display: block;
+    clear: both;
+}
+
+section{
+    height: 85vh;
+    justify-content: center;
+}
+
+
+
+.form-mediano{
+    min-width: 700px!important;
+}
+
+.form-mediano tr td:first-child{
+    font-weight: bold;
+}
+
+.alert {
+    position: relative;
+}
+
+.alert .close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 1em;
+}
+
+.alert .fa {
+    margin-right: .3em;
+}
+
+
+#pageMessages {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    width: 30%;
+}
+
+
+.log-out{
+    margin-left: auto;
+}
