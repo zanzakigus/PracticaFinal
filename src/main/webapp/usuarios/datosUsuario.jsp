@@ -51,7 +51,7 @@
                 </tr>
                 <tr>
                     <td>Tipo de usuario:</td>
-                    <td><c:out value="${user.getEntidad().getTipoUsuario()}"/></td>
+                    <td><c:out value="${user.getEntidad().getIdTipoUsuario().getTipoUsuario()}"/></td>
                 </tr>
 
                 </tbody>

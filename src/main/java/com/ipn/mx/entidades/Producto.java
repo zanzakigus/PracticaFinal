@@ -26,7 +26,7 @@ public class Producto implements Serializable {
 
 
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
     @JoinColumn(name = "idCategoria")
     private Categoria idCategoria;
 

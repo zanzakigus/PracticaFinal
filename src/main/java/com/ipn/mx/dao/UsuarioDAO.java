@@ -38,7 +38,13 @@ public class UsuarioDAO {
                 t.rollback();
             }
         }
-        return (UsuarioDTO) list.get(0);
+        if(list.size()>0){
+            return (UsuarioDTO) list.get(0);
+        }else
+        {
+            return null;
+        }
+
     }
 
     public void create(UsuarioDTO dto){
