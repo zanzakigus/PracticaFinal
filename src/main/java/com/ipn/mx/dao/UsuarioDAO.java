@@ -131,20 +131,22 @@ public class UsuarioDAO {
     public static void main(String[] args) {
 
         UsuarioDAO dao= new UsuarioDAO();
-        UsuarioDTO dto2 = new UsuarioDTO();
-       dto2.getEntidad().setNombre("Erick");
-        dto2.getEntidad().setMaterno("Rodriguez");
-        dto2.getEntidad().setPaterno("Alcantar");
-        dto2.getEntidad().setNombreUsuario("admin");
-        dto2.getEntidad().setClaveUsuario("admin");
-        dto2.getEntidad().setEmail("erz_ra@hotmail.com");
+        UsuarioDTO dto = new UsuarioDTO();
+       dto.getEntidad().setNombre("Erick");
+        dto.getEntidad().setMaterno("Rodriguez");
+        dto.getEntidad().setPaterno("Alcantar");
+        dto.getEntidad().setNombreUsuario("admin");
+        dto.getEntidad().setClaveUsuario("admin");
+        dto.getEntidad().setEmail("erz_ra@hotmail.com");
         TipoUsuarioDAO dao2= new TipoUsuarioDAO();
-        TipoUsuarioDTO dto = new TipoUsuarioDTO();
-        dto.getEntidad().setIdTipoUsuario(1);
-        dto = dao2.read(dto);
-        dto2.getEntidad().setIdTipoUsuario(dto.getEntidad());
-        /*  dao.create(dto2);*/
-        dao.login(dto2);
+        TipoUsuarioDTO dto2 = new TipoUsuarioDTO();
+        dto2.getEntidad().setIdTipoUsuario(1);
+        dto2 = dao2.read(dto2);
+        dto.getEntidad().setIdTipoUsuario(dto2.getEntidad());
+        //dto.getEntidad().setIdUsuario(1);
+        dao.create(dto);
+        //dto= dao.read(dto);
+        //System.out.println(dto.getEntidad());
 
 
     }

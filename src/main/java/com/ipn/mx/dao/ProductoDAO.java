@@ -1,6 +1,7 @@
 package com.ipn.mx.dao;
 
 
+import com.ipn.mx.dto.CategoriaDTO;
 import com.ipn.mx.dto.ProductoDTO;
 import com.ipn.mx.entidades.Producto;
 import com.ipn.mx.utilerias.HIbernateUtil;
@@ -99,5 +100,19 @@ public class ProductoDAO {
             }
         }
         return list;
+    }
+
+    public static void main(String[] args) {
+
+        ProductoDAO dao= new ProductoDAO();
+        ProductoDTO dto = new ProductoDTO();
+
+        CategoriaDAO dao2= new CategoriaDAO();
+        CategoriaDTO dto2 = new CategoriaDTO();
+        dto.getEntidad().setIdProducto(1);
+        dto = dao.read(dto);
+        System.out.println(dto.getEntidad().getIdCategoria());
+
+
     }
 }
