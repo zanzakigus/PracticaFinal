@@ -9,7 +9,6 @@ and open the template in the editor.
 <html>
 <head>
     <%@include file="../shared/redirect.jsp" %>
-    <%@include file="../shared/levelRedirect.jsp" %>
     <c:set var="styles" value="estilos/general.css"/>
 
     <meta charset="UTF-8">

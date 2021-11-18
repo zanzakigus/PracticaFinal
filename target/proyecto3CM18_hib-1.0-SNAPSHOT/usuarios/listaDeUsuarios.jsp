@@ -96,7 +96,7 @@
                                     </td>
                                     <td><c:out value="${dto.getEntidad().getNombreUsuario()}"/>
                                     </td>
-                                    <td><c:out value="${dto.getEntidad().getTipoUsuario()}"/>
+                                    <td><c:out value="${dto.getEntidad().getIdTipoUsuario().getTipoUsuario()}"/>
                                     </td>
                                     <td class="text-center"><a
                                             href="UsuarioController?accion=eliminar&id=<c:out value="${dto.getEntidad().getIdUsuario()}"/>"

@@ -96,7 +96,7 @@
                                     </td>
                                     <td><c:out value="${dto.getEntidad().getExistenciaProducto()}"/>
                                     </td>
-                                    <td><c:out value="${dto.getEntidad().getIdCategoria()}"/>
+                                    <td><c:out value="${dto.getEntidad().getIdCategoria().getNombreCategoria()}"/>
                                     </td>
                                     <c:if test="${sessionScope.tipo=='admin'}">
                                         <td class="text-center"><a
@@ -115,7 +115,7 @@
                         </c:when>
                         <c:otherwise>
                             <tr>
-                                <td class='text-center' colspan='6'>No hay registros</td>
+                                <td class='text-center' colspan='9'>No hay registros</td>
                             </tr>
                         </c:otherwise>
                     </c:choose>
