@@ -15,10 +15,15 @@ public class Producto implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idProducto;
+    @Column(length = 50, nullable = false)
     private String nombreProducto;
+    @Column(length = 100, nullable = false)
     private String descripcionProducto;
+    @Column(nullable = false)
     private double precioProducto;
+    @Column( nullable = false)
     private int existenciaProducto;
+
 
 
     @ManyToOne(fetch = FetchType.LAZY)

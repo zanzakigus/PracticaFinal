@@ -1,7 +1,10 @@
 package com.ipn.mx.dao;
 
+import com.ipn.mx.dto.CategoriaDTO;
+import com.ipn.mx.dto.TipoUsuarioDTO;
 import com.ipn.mx.dto.UsuarioDTO;
 import com.ipn.mx.entidades.Producto;
+import com.ipn.mx.entidades.TipoUsuario;
 import com.ipn.mx.entidades.Usuario;
 import com.ipn.mx.utilerias.HIbernateUtil;
 import org.hibernate.HibernateException;
@@ -125,5 +128,24 @@ public class UsuarioDAO {
             }
         }
         return list;
+    }
+
+    public static void main(String[] args) {
+
+        UsuarioDAO dao= new UsuarioDAO();
+        UsuarioDTO dto2 = new UsuarioDTO();
+        dto2.getEntidad().setNombre("Erick");
+        dto2.getEntidad().setMaterno("Rodriguez");
+        dto2.getEntidad().setPaterno("Alcantar");
+        dto2.getEntidad().setNombreUsuario("admin");
+        dto2.getEntidad().setClaveUsuario("admin");
+        dto2.getEntidad().setEmail("erz_ra@hotmail.com");
+        TipoUsuarioDAO dao2= new TipoUsuarioDAO();
+        TipoUsuarioDTO dto = new TipoUsuarioDTO();
+        dto.getEntidad().setIdTipoUsuario(1);
+        dto = dao2.read(dto);
+        dto2.getEntidad().setIdTipoUsuario(dto.getEntidad());
+        dao.create(dto2);
+
     }
 }

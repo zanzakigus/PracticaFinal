@@ -23,6 +23,8 @@
         <!--Aqui inicia la definicion de las clases de tipo entidad-->
         <mapping class="com.ipn.mx.entidades.Categoria"/>
         <mapping class="com.ipn.mx.entidades.Producto"/>
+        <mapping class="com.ipn.mx.entidades.TipoUsuario"/>
+        <mapping class="com.ipn.mx.entidades.Usuario"/>
 
 
     </session-factory>

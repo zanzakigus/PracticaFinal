@@ -307,7 +307,7 @@ public class UsuarioController extends HttpServlet {
             if ((user = dao.login(dto)) != null) {
                 HttpSession session = request.getSession(true);
                 session.setAttribute("usuario", user.getEntidad().getNombreUsuario());
-                session.setAttribute("tipo", user.getEntidad().getTipoUsuario());
+                session.setAttribute("tipo", user.getEntidad().getIdTipoUsuario().getTipoUsuario());
                 rd = request.getRequestDispatcher("index.jsp");
             } else {
                 HttpSession session = request.getSession(false);

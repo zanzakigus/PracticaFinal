@@ -105,7 +105,7 @@ public class CategoriaDAO {
         CategoriaDAO dao= new CategoriaDAO();
         CategoriaDTO dto2 = new CategoriaDTO();
         dto2.getEntidad().setIdCategoria(1);
-        dao.delete(dto2);
+        dao.read(dto2);
 
     }
 }

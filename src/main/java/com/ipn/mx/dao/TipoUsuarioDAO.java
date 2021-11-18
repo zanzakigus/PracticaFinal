@@ -1,6 +1,7 @@
 package com.ipn.mx.dao;
 
 import com.ipn.mx.dto.TipoUsuarioDTO;
+import com.ipn.mx.dto.UsuarioDTO;
 import com.ipn.mx.entidades.Producto;
 import com.ipn.mx.entidades.TipoUsuario;
 import com.ipn.mx.utilerias.HIbernateUtil;
@@ -67,7 +68,7 @@ public class TipoUsuarioDAO {
         Transaction t = s.getTransaction();
         try {
             t.begin();
-            dto.setEntidad(s.get(dto.getEntidad().getClass(),dto.getEntidad().getTipoUsuario()));
+            dto.setEntidad(s.get(dto.getEntidad().getClass(),dto.getEntidad().getIdTipoUsuario()));
             t.commit();
 
         }catch (HibernateException he){
@@ -99,5 +100,16 @@ public class TipoUsuarioDAO {
             }
         }
         return list;
+    }
+
+    public static void main(String[] args) {
+
+        TipoUsuarioDAO dao= new TipoUsuarioDAO();
+        TipoUsuarioDTO dto2 = new TipoUsuarioDTO();
+        dto2.getEntidad().setTipoUsuario("admin");
+        dao.create(dto2);
+        dto2.getEntidad().setTipoUsuario("lectura");
+        dao.create(dto2);
+
     }
 }
