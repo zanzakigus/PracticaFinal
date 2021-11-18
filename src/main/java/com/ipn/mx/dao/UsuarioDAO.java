@@ -22,7 +22,7 @@ public class UsuarioDAO {
 
         try {
             t.begin();
-            Query q = s.createQuery("from Usuario c where c.nombreUsuario=:nombreUsuario and c.claveUsuario=:claveUsuario  order by c.idUsuario");
+            Query q = s.createQuery("from Usuario c where c.nombreUsuario=:nombreUsuario  and c.claveUsuario=:claveUsuario  order by c.idUsuario");
             q.setParameter("nombreUsuario", dto.getEntidad().getNombreUsuario());
             q.setParameter("claveUsuario", dto.getEntidad().getClaveUsuario());
             for (Usuario c:(List<Usuario>) q.list()) {
