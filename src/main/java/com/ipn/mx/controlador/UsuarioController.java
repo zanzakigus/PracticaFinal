@@ -12,6 +12,9 @@ import com.ipn.mx.entidades.TipoUsuario;
 import com.ipn.mx.utilerias.EnviarMail;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperRunManager;
+import org.hibernate.Session;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.internal.SessionImpl;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -23,6 +26,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
+import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
@@ -144,13 +148,16 @@ public class UsuarioController extends HttpServlet {
     }
 
     private void MostrarReporteOne(HttpServletRequest request, HttpServletResponse response) {
-        /*UsuarioDAO dao = new UsuarioDAO();
+
         Map<String, Object> param = new HashMap<String, Object>();
         param.put("id", Integer.valueOf(request.getParameter("id")));
         try {
+            Session s  = (new Configuration().configure().buildSessionFactory()).openSession();
+            SessionImpl sessionImpl = (SessionImpl) s;
+            Connection conn = sessionImpl.connection();
             ServletOutputStream sos = response.getOutputStream();
             File report = new File(getServletConfig().getServletContext().getRealPath("/reports/reportOneUser.jasper"));
-            byte[] b = JasperRunManager.runReportToPdf(report.getPath(), param, dao.obtenerConexion());
+            byte[] b = JasperRunManager.runReportToPdf(report.getPath(), param, conn);
             response.setContentType("application/pdf");
             response.setContentLength(b.length);
             sos.write(b, 0, b.length);
@@ -158,16 +165,19 @@ public class UsuarioController extends HttpServlet {
             sos.close();
         } catch (IOException | JRException e) {
             e.printStackTrace();
-        }*/
+        }
     }
 
     private void MostrarReporte(HttpServletRequest request, HttpServletResponse response) {
 
- /*       UsuarioDAO dao = new UsuarioDAO();
+
         try {
+            Session s  = (new Configuration().configure().buildSessionFactory()).openSession();
+            SessionImpl sessionImpl = (SessionImpl) s;
+            Connection conn = sessionImpl.connection();
             ServletOutputStream sos = response.getOutputStream();
             File report = new File(getServletConfig().getServletContext().getRealPath("/reports/reportUsers.jasper"));
-            byte[] b = JasperRunManager.runReportToPdf(report.getPath(), null, dao.obtenerConexion());
+            byte[] b = JasperRunManager.runReportToPdf(report.getPath(), null, conn );
             response.setContentType("application/pdf");
             response.setContentLength(b.length);
             sos.write(b, 0, b.length);
@@ -175,7 +185,7 @@ public class UsuarioController extends HttpServlet {
             sos.close();
         } catch (IOException | JRException e) {
             e.printStackTrace();
-        }*/
+        }
     }
 
     private void mostrarGrafica(HttpServletRequest request, HttpServletResponse response) {

@@ -23,12 +23,10 @@ public class GraficaDAO {
         try {
             t.begin();
             Query q = s.createQuery("select p.idCategoria.nombreCategoria as nombreCategoria , count(*) as cantidad from Producto p  group by  p.idCategoria.nombreCategoria");
-            System.out.println(q.list());
-            for (String c: (List<String>) q.list()) {
+            for (Object[] c: (List<Object[]>) q.list()) {
                 GraficaDTO dto = new GraficaDTO();
-                System.out.println("salida"+c);
-                /*dto.setNombreCategoria(c.get("nombreCategoria"));
-                dto.setCantidad(rs.getInt("cantidad"));*/
+                dto.setNombreCategoria(String.valueOf(c[0]));
+                dto.setCantidad(Integer.parseInt(String.valueOf( c[1])));
                 list.add(dto);
             }
             t.commit();

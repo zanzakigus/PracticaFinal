@@ -42,8 +42,8 @@
                 <tr><td> Existencia: </td>
                     <td> <c:out value="${producto.getEntidad().getExistenciaProducto()}"/> </td>
                 </tr>
-                <tr><td> ID de la categoría: </td>
-                    <td> <a href="CategoriaController?accion=ver&id=<c:out value="${producto.getEntidad().getIdCategoria()}"/>" type="button" class="btn btn-warning"><c:out value="${producto.getEntidad().getIdCategoria()}"/> </a> </td>
+                <tr><td> Categoría: </td>
+                    <td> <a href="CategoriaController?accion=ver&id=<c:out value="${producto.getEntidad().getIdCategoria().getIdCategoria()}"/>" type="button" class="btn btn-warning"><c:out value="${producto.getEntidad().getIdCategoria().getNombreCategoria()}"/> </a> </td>
                 </tr>
                 </tbody>
             </table>

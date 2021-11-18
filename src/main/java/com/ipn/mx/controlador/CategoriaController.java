@@ -14,6 +14,7 @@ import com.ipn.mx.utilerias.HIbernateUtil;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperRunManager;
 import org.hibernate.Session;
+import org.hibernate.cfg.Configuration;
 import org.hibernate.internal.SessionImpl;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartUtils;
@@ -83,11 +84,11 @@ public class CategoriaController extends HttpServlet {
 
 
     private void MostrarReporteOne(HttpServletRequest request, HttpServletResponse response) {
-        CategoriaDAO dao = new CategoriaDAO();
+
         Map<String, Object> param = new HashMap<String,Object>();
         param.put("id",Integer.valueOf(request.getParameter("id")));
         try {
-            Session s = HIbernateUtil.getSessionFactory().getCurrentSession();
+            Session s  = (new Configuration().configure().buildSessionFactory()).openSession();
             SessionImpl sessionImpl = (SessionImpl) s;
             Connection conn = sessionImpl.connection();
             ServletOutputStream sos = response.getOutputStream();
@@ -108,9 +109,8 @@ public class CategoriaController extends HttpServlet {
     private void MostrarReporte(HttpServletRequest request, HttpServletResponse response) {
 
 
-        CategoriaDAO dao = new CategoriaDAO();
         try {
-            Session s = HIbernateUtil.getSessionFactory().getCurrentSession();
+            Session s  = (new Configuration().configure().buildSessionFactory()).openSession();
             SessionImpl sessionImpl = (SessionImpl) s;
             Connection conn = sessionImpl.connection();
             ServletOutputStream sos = response.getOutputStream();
