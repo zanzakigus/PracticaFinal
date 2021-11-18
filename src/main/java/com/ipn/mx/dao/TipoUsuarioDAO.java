@@ -1,8 +1,6 @@
 package com.ipn.mx.dao;
 
 import com.ipn.mx.dto.TipoUsuarioDTO;
-import com.ipn.mx.dto.UsuarioDTO;
-import com.ipn.mx.entidades.Producto;
 import com.ipn.mx.entidades.TipoUsuario;
 import com.ipn.mx.utilerias.HIbernateUtil;
 import org.hibernate.HibernateException;
