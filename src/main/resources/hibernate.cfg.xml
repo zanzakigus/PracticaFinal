@@ -21,6 +21,7 @@
         <property name="hibernate.enable_lazy_load_no_trans">true</property>
 
 
+
         <!--Aqui inicia la definicion de las clases de tipo entidad-->
         <mapping class="com.ipn.mx.entidades.Categoria"/>
         <mapping class="com.ipn.mx.entidades.Producto"/>
