@@ -24,7 +24,7 @@ public class EnviarMail {
             elMensaje.setText(mensaje);
 
             Transport t = s.getTransport("smtp");
-            t.connect(p.getProperty("mail.smtp.user"),"DiegoErick1");
+            t.connect(p.getProperty("mail.smtp.user"),"DiegoErickEscom");
 
             t.sendMessage(elMensaje,elMensaje.getAllRecipients());
             t.close();
