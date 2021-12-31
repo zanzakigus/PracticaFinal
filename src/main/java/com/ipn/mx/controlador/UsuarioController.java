@@ -261,6 +261,7 @@ public class UsuarioController extends HttpServlet {
         dto.getEntidad().setIdUsuario(Integer.parseInt(request.getParameter("id")));
 
         dao.delete(dto);
+
         listarUsuario(request, response);
 
     }
