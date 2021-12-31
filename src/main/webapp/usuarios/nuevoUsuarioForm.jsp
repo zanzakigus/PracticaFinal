@@ -77,13 +77,13 @@ and open the template in the editor.
                     >Seleccionar tipo de usuario
                     </option>
                         <option value="1"
-                                <c:if test="${user!=null && user.getEntidad().getIdTipoUsuario() == 1 }">
+                                <c:if test="${user!=null && user.getEntidad().getIdTipoUsuario().getIdTipoUsuario() == 1 }">
                                     selected
                                 </c:if>
                         >1-admin
                         </option>
                     <option value="2"
-                            <c:if test="${user!=null && user.getEntidad().getIdTipoUsuario() == 2 }">
+                            <c:if test="${user!=null && user.getEntidad().getIdTipoUsuario().getIdTipoUsuario() == 2 }">
                                 selected
                             </c:if>
                     >2-lectura

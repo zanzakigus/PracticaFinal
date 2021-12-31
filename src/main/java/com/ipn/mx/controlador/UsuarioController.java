@@ -9,6 +9,7 @@ import com.ipn.mx.dao.UsuarioDAO;
 import com.ipn.mx.dto.TipoUsuarioDTO;
 import com.ipn.mx.dto.UsuarioDTO;
 import com.ipn.mx.entidades.TipoUsuario;
+import com.ipn.mx.entidades.Usuario;
 import com.ipn.mx.utilerias.EnviarMail;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperRunManager;
